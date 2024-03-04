@@ -1,0 +1,1 @@
+DROP TABLE KA_test.PETUGAS_BB;

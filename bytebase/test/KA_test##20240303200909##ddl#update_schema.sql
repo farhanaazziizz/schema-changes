@@ -1,0 +1,1 @@
+DROP TABLE KA_develop.PETUGAS_CC;
