@@ -29,7 +29,7 @@ elif count_files == 1:
     db.get_current_schema(path_skema)
     db.checking_git(path_skema)
     print("if file 2 after check backup", db.name_files)
-    if len(db.name_files) > 3:
+    if len(db.name_files) > 2:
         db.delete_file_git(path_skema)
 
     db.diff_content(path_backup)
@@ -46,7 +46,7 @@ elif count_files >= 2:
     db.get_current_schema(path_skema)
     db.checking_git(path_skema)
 
-    if len(db.name_files) > 3:
+    if len(db.name_files) > 2:
         db.delete_file_git(path_skema)
 
     db.diff_content(path_backup)
