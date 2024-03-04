@@ -15,12 +15,12 @@ db = diffDatabase()
 db.db_connection(DB_NAME, DB_USER, DB_PASS, DB_HOST, DB_PORT)
 db.checking_git(path_backup)
 count_files = len(db.name_files)
-if count_files == 1:
+if count_files == 0:
     db.maria_db_dump(DB_HOST, DB_USER, DB_PASS, DB_NAME, path_backup)
     db.get_current_schema(path_skema)
     print("if file 1", db.name_files)
 
-elif count_files == 2:
+elif count_files == 1:
     db.maria_db_dump(DB_HOST, DB_USER, DB_PASS, DB_NAME, path_backup)
     print("if file 2 before check schema", db.name_files)
     if count_files >= 2:
@@ -38,7 +38,7 @@ elif count_files == 2:
     db.generate_ddl_for_changes(path_skema, path_backup)
     db.changes_query(path_bytebase, DB_TARGET)
 
-elif count_files >= 3:
+elif count_files >= 2:
     db.maria_db_dump(DB_HOST, DB_USER, DB_PASS, DB_NAME, path_backup)
     db.checking_git(path_backup)
     print("if file 3 before check backup", db.name_files)
