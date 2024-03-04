@@ -1,0 +1,1 @@
+DROP TABLE KA_test.USER_BB;
