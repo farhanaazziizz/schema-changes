@@ -1,0 +1,1 @@
+ALTER TABLE KA_test.DATA_CLAIM ADD COLUMN Column1 varchar;
