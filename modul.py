@@ -15,6 +15,7 @@ class diffDatabase():
         self.ddl = None
         self.last_schema = None
         self.current_schema = None
+        self.diff_content = None
 
     def db_connection(self, database, username, password, host, port):
         conn = mysql.connector.connect(database=database, user=username,
@@ -121,8 +122,8 @@ class diffDatabase():
             if line.endswith(';'):
                 clean_sql.append(statement)
                 statement = ""
-        diff_result = set(clean_sql)
-        return diff_result
+        self.diff_result = set(clean_sql)
+        return self.diff_result
 
     def generate_ddl_for_changes(self, path_skema, path_backup):
         '''
@@ -148,7 +149,7 @@ class diffDatabase():
             if column_key not in last_columns:
                 column = current_columns[column_key]
 
-                diff_result = self.diff_content(path_backup)
+                diff_result = diff_content(path_backup)
                 print(f'DIFF: \n {diff_result}')
                 contains_create = any("create" in string.lower()
                                       for string in diff_result)

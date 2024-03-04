@@ -36,7 +36,8 @@ DROP TABLE IF EXISTS `DATA_CLAIM`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `DATA_CLAIM` (
-  `nama` varchar(255) DEFAULT NULL
+  `nama` varchar(255) DEFAULT NULL,
+  `Column1` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -67,6 +68,18 @@ CREATE TABLE `NEW_USERS` (
   `nama_user` varchar(255) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `no_telpon` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `NewTable`
+--
+
+DROP TABLE IF EXISTS `NewTable`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `NewTable` (
+  `Column1` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -108,4 +121,4 @@ CREATE TABLE `USER_BARU_BB` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-04 13:49:21
+-- Dump completed on 2024-03-04 13:51:07
